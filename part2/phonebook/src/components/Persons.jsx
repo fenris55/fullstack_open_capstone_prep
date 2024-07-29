@@ -1,6 +1,6 @@
 import Person from './Person'
 
-const Persons = ({list, searchTerm}) => {
+const Persons = ({list, searchTerm, handleDelete}) => {
   if (searchTerm) {
     let filteredNames = list.filter(p => {
       let nameStart = p.name.toLowerCase().slice(0, searchTerm.length)
@@ -8,16 +8,20 @@ const Persons = ({list, searchTerm}) => {
     })
 
     return (
-      <>
-        {filteredNames.map(p => <Person key={p.name} newPerson={p}/>)}
-      </>
+      <div>
+        {filteredNames.map(p => <Person key={p.name} newPerson={p} handleDelete={handleDelete}/>)}
+      </div>
     )
   }
 
   return (
-    <>
-    {list.map(p => <Person key={p.name} newPerson={p}/>)}
-    </>
+    <div>
+    {list.map(p => {
+      return (
+        <Person key={p.name} newPerson={p} handleDelete={handleDelete}/>
+      )
+    })}
+    </div>
   )
 }
 

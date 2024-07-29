@@ -1,6 +1,9 @@
-const Person = ({newPerson}) => {
+const Person = ({newPerson, handleDelete}) => {
   return (
-    <p>{newPerson.name} {newPerson.number}</p>
+    <>
+      <p key={newPerson.id}>{newPerson.name} {newPerson.number}</p>
+      <button key={newPerson.id * 100} onClick={() => handleDelete(newPerson.name, newPerson.id)}>delete</button>
+    </>
   )
 }
 
