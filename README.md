@@ -1,1 +1,1 @@
-All exercises and projects for the Fullstack Open course.
+Part 1 and Part projects and exercises for the Fullstack Open course.
